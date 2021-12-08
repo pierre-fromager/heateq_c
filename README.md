@@ -2,32 +2,54 @@
 
 Heat equation 1D solver using Bender-Schmidt finite difference method (FDM).  
 Basicaly heat equation principle extends wave equation.  
-Written in C lang.  
+
+## Requirements
+* gcc
+* gnuplot
 
 ## Equations
-
-Heat equation can be solved using partial differential equations as below
+Heat equation can be solved using partial differential equation described as below
 
 **(∂u/∂t) = α²(∂²u/∂x²)**
 
 Considering 
-
-* **u** as time space vector assimilated to 2D matrix
+* **u** as time space vector assimilated to U 2D matrix u(x,t)
 * **t** as time
 * **x** as energy
 * **α²** as thermal coefficient
 
 ### Alpha square
-
 α² is the thermal coefficient represented as below
 
 **α² = k/pc**
 
-Considering
+Considering  
 
 * **k** as thermal conductivity (W/(m·K))
 * **p** as material density (Kg/m³)
 * **c** specific heat capacity (kJ. kg-¹. K-¹)
+
+## Use case
+
+Example providing paramaters as below
+* u(x) = 150
+* u(t) = 100
+* α² = 4 (thermal coefficient)
+* u0 = 0 (initial boundary condition)
+* un = 0 (terminal boundary condition)
+* h = 1 (x stepsize along x-axis)
+* k = 1/8 (t stepsize along y-axis)
+* Energy e(x) = 20*sin(x)+80
+
+*Energy convolution*
+
+![Energy](doc/assets/e.png)
+
+*Running build script './build_heateq.sh' will show representation as below*
+
+![heateq](doc/assets/u.png)
+
+*Matrix U datas can be found after built [here](./heateq.dat)*
 
 ## Appendices
 
@@ -36,7 +58,6 @@ Considering
 |Material|Heat Capacity|  
 |--------|-------------|  
 |Aluminium|0. 897|  
-|Aluminium bronze|0. 897|  
 |Brass|0. 377|
 |Bronze|0. 343|
 |Cadmium|0. 235|
@@ -50,7 +71,6 @@ Considering
 |Graphite|0. 838|
 |Ice|2. 100|
 |Ironcast|0. 420|
-|pure|0. 447|
 |Kerosene|2. 100|
 |Lead|0. 130|
 |Magnesia|0. 930|
