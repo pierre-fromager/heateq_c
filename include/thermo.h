@@ -1,7 +1,7 @@
 /**
  * @file thermo.h
  * @author Pierre Fromager (info@pier-infor.fr)
- * @brief thermo lib for mollier
+ * @brief thermo headers for temperatures
  * @version 0.1
  * @date 2021-08-26
  * 
@@ -14,9 +14,6 @@
 
 #include <math.h>
 #include "matrix.h"
-
-#define HE_X 8
-#define HE_T 5
 
 typedef long double ld;
 typedef ld (*fn_ld_int_t)(int);
@@ -68,7 +65,6 @@ ld absolute_humidity(ld t, ld h);
 
 /**
  * @brief Using both Rothfusz and Steadman's equations
- * @url http://www.wpc.ncep.noaa.gov/html/heatindex_equation.shtml
  * @url https://www.wpc.ncep.noaa.gov/html/heatindex_equation.shtml
  * 
  * @param t °F
@@ -86,10 +82,6 @@ ld heat_index(ld t, ld h);
  *          pc specific heat capacity (J/(kg·K)) with
  *          p material density kg/m3
  *          c specific heat capacity (kJ kg−1 K−1)
- * 
- * @url https://math.stackexchange.com/questions/2438511/solving-heat-equation-using-bender-schmidt-method
- * @url https://www.codewithc.com/c-program-for-solution-of-heat-equation/
- * @url https://www.youtube.com/watch?v=XM9SmieCRBU
  * 
  * @param nx vector size : number of values (Y) for matrix m(X,Y)
  * @param nt vector size : number of time (X) for matrix m(X,Y)
