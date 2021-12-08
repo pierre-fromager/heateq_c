@@ -1,0 +1,10 @@
+*.o
+*.so
+.vscode
+mollier
+mollier_test
+doc/html
+callgrind.*
+.~lock.*
+*.csv
+*.dat
